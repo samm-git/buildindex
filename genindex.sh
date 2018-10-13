@@ -20,7 +20,7 @@ for num in $NUMS; do
   then
       # caching artifact data locally
       curl --silent --fail \
-        "https://circleci.com/api/v1.1/project/github/${num}/artifacts" \
+        "https://circleci.com/api/v1.1/project/github/${PROJECT}/${num}/artifacts" \
         > "${num}-artefacts.json"
   fi
   # extract artifacts data
