@@ -24,7 +24,7 @@ for num in $NUMS; do
         > "${num}-artefacts.json"
   fi
   # extract artifacts data
-  echo "<h2>Build <a href='https://circleci.com/gh/${PROJECT}/${num}'>#${num}</h2>" >> index.html.tmp
+  echo "<h2>Build <a href='https://circleci.com/gh/${PROJECT}/${num}'>#${num}</a></h2>" >> index.html.tmp
   jq -r '.[]|"<li><a href=\"" + .url + "\">" + .path +  "</a></li>"' "${num}-artefacts.json" >> index.html.tmp
 done
 
